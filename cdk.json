@@ -1,0 +1,8 @@
+{
+  "app": "node bin/app.js",
+  "watch": { "exclude": ["node_modules", "cdk.out", "test", "dev"] },
+  "context": {
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:target-partitions": ["aws"]
+  }
+}

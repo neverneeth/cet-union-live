@@ -1,0 +1,22 @@
+{
+  "name": "election-live",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Unofficial live results, exit poll and noticeboard for the college union election (AWS serverless).",
+  "scripts": {
+    "postinstall": "npm --prefix lambda install --omit=dev --no-audit --no-fund",
+    "dev": "node dev/server.js",
+    "test": "node --test test/backend.test.js test/clean-urls.test.js",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy --require-approval never --outputs-file outputs.json",
+    "destroy": "cdk destroy"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "aws-cdk-lib": "^2.220.0",
+    "constructs": "^10.4.2"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.1030.0"
+  }
+}

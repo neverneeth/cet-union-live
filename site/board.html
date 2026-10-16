@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Noticeboard</title>
+<meta name="description" content="Unofficial live count, exit poll and noticeboard for the college union election.">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#f5f5f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1117" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/app.css">
+<script src="/js/theme.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="/"><img src="/favicon.svg" alt=""><span class="brand-text"><span class="brand-title">CET College Union Election 2026</span><small>Unofficial live count</small></span></a>
+    <nav class="top-nav" aria-label="Sections">
+      <a href="/">Results</a>
+      <a href="/poll">Exit poll</a>
+      <a href="/board" aria-current="page">Noticeboard</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+    <a class="head-link" href="/privacy">Privacy</a>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: System. Change theme" title="Theme: System"><svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a6.6 6.6 0 0 0 9.7 9.7Z"/></svg></button>
+  </div>
+</header>
+<div class="notice" id="notice" hidden><div class="wrap"></div></div>
+<main class="wrap page" id="main">
+  <header class="page-head">
+    <h1 class="page-title">Noticeboard</h1>
+    <p class="lede">Say your piece about the election, anonymously. Posts go up straight away. Two moderators review anything readers report, and a post reported by several people is taken down until they look at it.</p>
+  </header>
+
+  <section class="card narrow" id="compose" aria-label="Write a post">
+    <form id="post-form" novalidate>
+      <div class="field">
+        <label for="title">Headline <span class="hint">(optional)</span></label>
+        <input id="title" type="text" maxlength="80" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="body">Your post</label>
+        <textarea id="body" maxlength="2000" required></textarea>
+        <div class="wc" id="wc">0 / 250 words</div>
+      </div>
+      <div class="field">
+        <label for="uid">University ID</label>
+        <input id="uid" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="TVE23CS045" required>
+        <p class="hashline" id="uid-hash" aria-live="polite"></p>
+        <p class="hint">Only used on this phone to limit how often anyone can post. It is never shown or stored with your post.</p>
+      </div>
+      <div id="human"></div>
+      <div id="post-msg" hidden></div>
+      <div class="toolbar"><button class="btn" type="submit" id="post-submit">Publish post</button></div>
+      <p class="hint">No links, phone numbers or ID numbers. Be fair to candidates: personal attacks get removed.</p>
+    </form>
+  </section>
+  <p id="closed-note" class="card narrow" hidden>The noticeboard is closed for new posts right now. You can still read and report.</p>
+
+  <section class="group narrow" aria-label="Posts">
+    <div class="board" id="board" aria-busy="true">
+      <div class="slip skeleton" aria-hidden="true"><span class="sk sk-title"></span><span class="sk sk-line w-90"></span><span class="sk sk-line w-70"></span><span class="sk sk-line w-30"></span></div>
+      <div class="slip skeleton" aria-hidden="true"><span class="sk sk-title"></span><span class="sk sk-line w-90"></span><span class="sk sk-line w-50"></span></div>
+      <p class="sr-only">Loading posts</p>
+    </div>
+    <div class="toolbar"><button class="btn ghost" id="more" type="button" hidden>Show older posts</button></div>
+  </section>
+
+  <dialog id="id-dialog" aria-labelledby="dlg-title">
+    <form method="dialog" id="id-form">
+      <h2 id="dlg-title">Report this?</h2>
+      <p id="dlg-text"></p>
+      <div class="field" id="dlg-id-field">
+        <label for="dlg-uid">University ID</label>
+        <input id="dlg-uid" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="TVE23CS045">
+        <p class="hashline" id="dlg-hash"></p>
+      </div>
+      <p class="hint" id="dlg-saved" hidden>Using the ID you entered earlier on this page. <button class="linkish" type="button" id="dlg-change">Use a different ID</button></p>
+      <div id="dlg-human"></div>
+      <div id="dlg-msg" hidden></div>
+      <div class="toolbar">
+        <button class="btn" id="dlg-go" value="go">Report</button>
+        <button class="btn ghost" id="dlg-cancel" value="cancel" formnovalidate>Cancel</button>
+      </div>
+    </form>
+  </dialog>
+</main>
+<footer class="site-foot">
+  <div class="wrap">Unofficial results, entered by volunteers as counts are announced. The returning officer's declaration is final. <a href="/privacy">How your data is handled</a>. <a href="<REPO_URL>">Source code</a>.</div>
+</footer>
+<nav class="tab-bar" aria-label="Sections">
+  <a href="/"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16"/><path d="M8 16v-4M12.5 16V8M17 16v-6"/></svg></span><span>Results</span></a>
+  <a href="/poll"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><span>Exit poll</span></a>
+  <a href="/board" aria-current="page"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 20 12Z"/></svg></span><span>Noticeboard</span></a>
+</nav>
+<script type="module" src="/js/board.js"></script>
+<script type="module" src="/js/welcome.js"></script>
+</body>
+</html>

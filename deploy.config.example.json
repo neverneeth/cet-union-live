@@ -1,0 +1,7 @@
+{
+  "alertEmail": "you@example.com",
+  "turnstileSiteKey": "",
+  "turnstileSecret": "",
+  "domain": "",
+  "certificateArn": ""
+}
