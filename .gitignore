@@ -4,3 +4,6 @@ cdk.out/
 secrets.local.json
 deploy.config.json
 outputs.json
+private-export/
+reports/
+archive-data/

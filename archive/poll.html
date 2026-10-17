@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exit poll</title>
+<meta name="description" content="Archived unofficial results and exit poll for the CET College Union Election 2026.">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#f5f5f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1117" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/app.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="./"><img src="favicon.svg" alt=""><span class="brand-text"><span class="brand-title">CET College Union Election 2026</span><small>Archived unofficial count</small></span></a>
+    <nav class="top-nav" aria-label="Sections">
+      <a href="./">Results</a>
+      <a href="poll" aria-current="page">Exit poll</a>
+      <a href="how-it-ran">How it ran</a>
+      <a href="privacy">Privacy</a>
+    </nav>
+    <a class="head-link" href="privacy">Privacy</a>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Colour theme: System. Change theme" title="Theme: System"><svg class="i-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><svg class="i-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a6.6 6.6 0 0 0 9.7 9.7Z"/></svg></button>
+  </div>
+</header>
+<main class="wrap page" id="main">
+  <header class="page-head">
+    <h1 class="page-title">Exit poll</h1>
+    <p class="lede" id="lb-lede">Final exit-poll results, and how they compared with the declared winners.</p>
+  </header>
+
+  <section class="group" aria-labelledby="cmp-title">
+    <h2 class="section-title" id="cmp-title">Exit poll against the result<span id="cmp-summary"></span></h2>
+    <div class="card table-card" id="cmp" aria-busy="true"><span class="sk sk-line w-90" aria-hidden="true"></span><span class="sk sk-line w-70" aria-hidden="true"></span></div>
+    <p class="unofficial" id="cmp-note"></p>
+  </section>
+
+  <section class="group" aria-labelledby="lb-title">
+    <h2 class="section-title" id="lb-title">Answers by post</h2>
+    <div class="filters">
+      <div class="seg" id="lb-seg" role="group" aria-label="Break down by">
+        <button type="button" data-b="none" aria-pressed="true">Overall</button>
+        <button type="button" data-b="dept" aria-pressed="false">By programme</button>
+        <button type="button" data-b="year" aria-pressed="false">By year</button>
+      </div>
+    </div>
+    <div class="lb" id="lb"></div>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">Archived copy of the unofficial live results site. Figures were entered by volunteers as counts were announced; the returning officer's declaration is final. <a href="privacy">Privacy</a>. <a href="https://github.com/neverneeth/cet-union-live">Source code</a>.</div>
+</footer>
+<nav class="tab-bar" aria-label="Sections">
+  <a href="./"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16"/><path d="M8 16v-4M12.5 16V8M17 16v-6"/></svg></span><span>Results</span></a>
+  <a href="poll" aria-current="page"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><span>Exit poll</span></a>
+  <a href="how-it-ran"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><span>How it ran</span></a>
+</nav>
+<script type="module" src="js/exitpoll.js"></script>
+</body>
+</html>
